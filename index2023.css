@@ -22,9 +22,9 @@ body {
 
 /* Header styles */
 #header {
-    width: 450px;
-    max-width: 450px; /* 如果屏幕小于600px，保持宽度不变 */
-    min-width: 300px; /* 设置最小宽度，避免过小 */
+    width: 100%; /* 设置为相对于父容器宽度的百分比 */
+    max-width: 600px; /* 设置最大宽度 */
+    min-width: 300px; /* 设置最小宽度 */
     height: 75px;
     padding: 20px;
     background-color: #fffffb;
@@ -54,9 +54,9 @@ body {
 
 /* Quiz container styles */
 #quiz-container {
-    width: 480px;
-    max-width: 480px; /* 设置最大宽度，避免过大 */
-    min-width: 300px; /* 设置最小宽度，避免过小 */
+    width: 100%; /* 设置为相对于父容器宽度的百分比 */
+    max-width: 600px; /* 设置最大宽度 */
+    min-width: 300px; /* 设置最小宽度 */
     height: 100%;
     background-image: url('images/2023background.jpg');
     border-radius: 10px;

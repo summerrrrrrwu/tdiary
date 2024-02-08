@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const introText = document.getElementById('introText');
     const formGroups = document.querySelectorAll('.form-group');
     const startButton = document.getElementById('startButton');
-
     const paragraphs = [
         "謝謝你陪我一起看完我的2023回顧",
         "很精采吧!",
@@ -13,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         "可以截圖分享給你的好朋友一起玩",
         "下面也留下你的名字跟email",
         "將這本日記一起成為我們共同撰寫的回憶📔",
+		"      ",
+		"P.S. 想了解更多台灣氣候的保養知識可以點擊下面的連結喔",
+		"by.小T",
     ];
 
     let index = 0;
@@ -64,40 +66,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // 在类型动画完成后调用淡入表单和按钮
     setTimeout(typeWriter, 1000); // 延迟显示文本动画
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const completionButton = document.getElementById('completionButton');
-
-    // 监听填写完毕按钮的点击事件
-    completionButton.addEventListener('click', function() {
-        // 验证姓名和电子邮件是否都填写了
-        if (nameInput.value !== '' && emailInput.value !== '') {
-            // 发送 POST 请求到后端 Flask 服务
-            fetch('/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: nameInput.value,
-                    email: emailInput.value
-                })
-            }).then(response => {
-                if (response.ok) {
-                    alert('填写完毕！电子邮件已发送到 summerwu0624@gmail.com');
-                } else {
-                    alert('发生错误，请稍后再试！');
-                }
-            }).catch(error => {
-                console.error('发生错误:', error);
-                alert('发生错误，请稍后再试！');
-            });
-        } else {
-            alert('请填写姓名和邮箱！');
-        }
-    });
-});
-
-
