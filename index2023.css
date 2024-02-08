@@ -1,0 +1,139 @@
+/* Font declaration */
+@font-face {
+    font-family: 'Cubic';
+    src:  url('fonts/ChenYuluoyan-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body styles */
+body {
+    font-family: 'Cubic', sans-serif; /* 使用自定义字体 */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+/* Header styles */
+#header {
+    width: 450px;
+    max-width: 450px; /* 如果屏幕小于600px，保持宽度不变 */
+    min-width: 300px; /* 设置最小宽度，避免过小 */
+    height: 75px;
+    padding: 20px;
+    background-color: #fffffb;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#header img {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+.header-text {
+    margin-top: 0px;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+/* Quiz container styles */
+#quiz-container {
+    width: 480px;
+    max-width: 480px; /* 设置最大宽度，避免过大 */
+    min-width: 300px; /* 设置最小宽度，避免过小 */
+    height: 100%;
+    background-image: url('images/2023background.jpg');
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    margin-top: 95px;
+	background-size: cover; /* 修改背景图像的尺寸适应容器 */
+	background-repeat: no-repeat; /* 禁止背景图像重复 */
+	overflow-y: auto; /* 如果内容超出高度，则显示垂直滚动条 */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    #quiz-container {
+        padding-top: 177.77%; /* 只在屏幕宽度小于等于600px时应用padding-top */
+    }
+}
+
+
+/* Next page button styles */
+.nextPageButton1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 充满quiz-container宽度 */
+    height: 100%; /* 充满quiz-container高度 */
+    z-index: 1001; /* 确保在quiz-container上层 */
+    background-color: transparent; /* 透明背景 */
+    border: none; /* 移除边框 */
+    cursor: pointer;
+}
+
+/* 这里使用 ::before 伪元素来创建一个透明的覆盖层 */
+.nextPageButton1::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; 
+    border-radius: 10px; /* 设置为圆角 */
+    transition: background-color 0.3s; /* 添加过渡效果 */
+}
+
+/* 鼠标悬停时 */
+.nextPageButton1:hover::before {
+    background-color: transparent; /* hover时的颜色 */
+}
+/* 鼠标点击时 */
+.nextPageButton1:active::before {
+    background-color: transparent; /* active时的颜色 */
+}
+
+/* Result container styles */
+#result {
+    display: none;
+    /* 初始隐藏结果容器 */
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 600px) {
+    #quiz-container {
+        width: 70%;
+        /* 大屏幕时的宽度 */
+    }
+    .options-container {
+        flex-wrap: nowrap;
+        /* 大屏幕时不换行 */
+    }
+}
+
+#transitionImage {
+    transition: transform 6s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1212px; /* 將寬度設置為所需的大小 */
+    height: 1254px; /* 將高度設置為所需的大小 */
+}

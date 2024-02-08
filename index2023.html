@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小T的美妝日記❤️</title>
+    <link rel="stylesheet" href="index2023.css">
+    <link rel="icon" href="images/diary.jpg" type="image/jpg">
+</head>
+<body>
+    <div id="header">
+        <img src="images/diary.jpg" alt="Header Image">
+        <div class="header-text glowing-text">
+            <p>小T的美妝日記❤️</p>
+            <p id="sub-text"></p>
+        </div>
+    </div>
+    <div id="quiz-container">
+        <button class="nextPageButton1" onclick="goToNextPage(1)"></button>
+    </div>
+    <div id="result"></div>
+    <script>
+        function goToNextPage(pageNumber) {
+            // 根据传入的页码，构造跳转的问题页面的 URL
+            const nextPageUrl = "question" + pageNumber + ".html";
+
+            // 使用 window.location.href 跳转到下一个页面
+            window.location.href = nextPageUrl;
+        }
+    </script>
+    <script>
+        // JavaScript 代码，逐渐显示文字
+        const subText = document.getElementById('sub-text');
+        let charIndex = 0;
+        const text = "點擊2023任何一個被劃記的日期來開啟這趟旅程🚗";
+
+        function showText() {
+            if (charIndex < text.length) {
+                subText.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(showText, 50); // 每50毫秒显示一个字符
+            }
+        }
+
+        showText(); // 调用函数开始显示文字
+    </script>
+</body>
+</html>

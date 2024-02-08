@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小T的美妝日記❤️</title>
+    <link rel="stylesheet" href="question.css">
+	<script src="question.js"></script>
+    <link rel="icon" href="images/diary.jpg" type="image/jpg">
+</head>
+
+<body>
+    <div id="header">
+        <img src="images/diary.jpg" alt="Header Image">
+        <div class="header-text">
+            <p>小T的美妝日記❤️</p>
+        </div>
+    </div>
+    <div id="quiz-container" style="background-image: url('images/q1.jpg');">
+        <div class="question">
+            <p id="introText"></p>
+            <div class="option option-1" style="opacity: 0;">
+                <span>A. 美白精華</span>
+                <img src="images/q1a.png" alt="Option A Image" class="option-image" onclick="submitAnswer('A')">
+            </div>
+            <div class="option option-2" style="opacity: 0;" >
+                <span>B. 補水精華</span>
+                <img src="images/q1b.png" alt="Option B Image" class="option-image" onclick="submitAnswer('B')">
+            </div>
+            <div class="option option-3" style="opacity: 0;" >
+                <span>C. 水潤面膜</span>
+                <img src="images/q1c.png" alt="Option C Image" class="option-image" onclick="submitAnswer('C')">
+            </div>
+            <div class="option option-4" style="opacity: 0;" >
+				  <span>D. 淨膚水</span>
+				  <img src="images/q1d.png" alt="Option D Image" class="option-image" onclick="submitAnswer('D')">
+				</div>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <!-- Add this div at the bottom of each page to display the score -->
+    <div id="score-display">
+	  <p><span id="user-score">0</span></p>
+	</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const introText = document.getElementById('introText');
+            const paragraphs = [
+                "今天就是上戰場的日子了，小T準備在學測的戰場上大展身手了！一大早她選擇用她的專屬幸運保養品來做最後的打氣，小T會選擇哪一項保養品呢？"
+            ];
+
+            let index = 0;
+            let paragraphIndex = 0;
+
+            function typeWriter() {
+                if (paragraphIndex < paragraphs.length) {
+                    if (index < paragraphs[paragraphIndex].length) {
+                        introText.innerHTML += paragraphs[paragraphIndex].charAt(index);
+                        index++;
+                        setTimeout(typeWriter, 60); // 调整打字速度（毫秒）
+                    } else {
+                        introText.innerHTML += '<br>';
+                        paragraphIndex++;
+                        index = 0;
+                        setTimeout(typeWriter, 50);
+                    }
+                } else {
+                    fadeInOptions(); // 添加选项逐个显示的函数调用
+                }
+            }
+
+            setTimeout(typeWriter, 1000);
+
+            const options = document.querySelectorAll('.option');
+
+            // 设置所有选项的初始不透明度为0
+            options.forEach(option => {
+                option.style.opacity = '0';
+            });
+
+            function fadeInOptions() {
+                let opacity = 0;
+                const fadeInInterval = setInterval(function() {
+                    if (opacity < 1) {
+                        options.forEach(option => {
+                            option.style.opacity = opacity;
+                        });
+                        opacity += 0.05; // 调整淡入速度
+                    } else {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 100); // 调整淡入间隔（毫秒）
+            }
+        });
+    </script>
+</body>
+</html>
+
