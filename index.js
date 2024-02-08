@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "Ahaha~就是本小姐我拉",
         "來一起看看我2023年的日記",
         "並幫我做決定吧!",
-        "❤️❤️❤️"
-		"(建議用手機遊玩喔)"
+        "❤️❤️❤️",
+		"(建議用手機遊玩)"
     ];
 
     let index = 0;
