@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "來一起看看我2023年的日記",
         "並幫我做決定吧!",
         "❤️❤️❤️"
+		"(建議用手機遊玩喔)"
     ];
 
     let index = 0;
