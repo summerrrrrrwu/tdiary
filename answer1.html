@@ -17,23 +17,21 @@
     </div>
     <div id="quiz-container1" style="background-image: url('images/answer1.jpg');">
 	</div>
-	<div id="quiz-container2"">
         <form id="quiz-form">
-            <div class="form-group">
+            <p id="introText"></p>
+            <div class="form-group" style="opacity: 0;"> <!-- 添加初始的透明度 -->
                 <label for="name">您的姓名：</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="opacity: 0;"> <!-- 添加初始的透明度 -->
                 <label for="email">您的Email：</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="options-container">
-                <button class="option" id="retest" onclick="window.location.href='index.html'">重新測驗</button>
-                <a href="https://www.t-dimensional-beauty.com/" class="option" id="tdb-website">查看更多-TDB官網</a>
-                <a href="https://tdbxkissme.wixsite.com/t-dimensional-beauty" class="option" id="forum">查看更多-濕熱氣候美妝論壇</a>
-                <a href="https://www.facebook.com/profile.php?id=100067206228290&locale=zh_TW" class="option" id="fb-website">查看更多-FB官網</a>
+            <div class="options-container"> <!-- 添加初始的透明度 -->
+                <div class="option" id="startButton">
+                    <span>重新測驗</span>
+                </div>
             </div>
         </form>
-    </div>
 </body>
 </html>

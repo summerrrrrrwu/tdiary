@@ -20,11 +20,11 @@ body {
     justify-content: flex-start;
     padding-top: 20px;
 }
-
 /* Header styles */
 #header {
-    width: 90%;
-    max-width: 600px;
+    width: 450px;
+    max-width: 450px; /* 如果屏幕小于600px，保持宽度不变 */
+    min-width: 300px; /* 设置最小宽度，避免过小 */
     height: 75px;
     padding: 20px;
     background-color: #fffffb;
@@ -37,6 +37,7 @@ body {
     border-radius: 10px;
     text-align: center;
 }
+
 
 #header img {
     max-width: 100%;
@@ -51,6 +52,7 @@ body {
     margin: 0;
     font-size: 1.3em;
 }
+
 
 /* Quiz container styles */
 #quiz-container1{
@@ -70,22 +72,6 @@ body {
     position: relative;
     margin-top: 95px;
 }
-#quiz-container2 {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    padding-top: 177.77%;
-    background-color: #f4f4f4;
-    background-image: url('images/repeat.jpg');
-    background-repeat: repeat-y;
-    background-size: contain;
-    background-position: top center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
 
 
 /* Intro text styles */
@@ -97,7 +83,7 @@ body {
 /* Form styles */
 .form-group {
     margin-bottom: 20px;
-	width: calc(100% - 40px);
+	width: calc(100% - 20px);
 	margin: 10px auto;
 }
 
