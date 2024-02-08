@@ -47,13 +47,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Redirect to Question 1 Functionality
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById('startButton');
 
     startButton.addEventListener('click', function() {
+        // 重定向到 index2023.html 页面
         window.location.href = 'index2023.html';
     });
+
+    // 初始化总分数为 0，并存储到本地存储中
+    const totalScore = 0;
+    localStorage.setItem('totalScore', totalScore);
 });
-
-
