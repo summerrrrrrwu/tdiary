@@ -80,6 +80,7 @@ body {
     white-space: normal;
 }
 
+
 /* Form styles */
 .form-group {
     margin-bottom: 20px;
@@ -138,6 +139,15 @@ body {
 #result {
     display: none;
 }
+
+/* 添加新的样式 */
+        #social-icons {
+            margin-top: 20px; /* 调整图标之间的垂直间距 */
+        }
+        #social-icons img {
+            width: 25px;
+            margin-right: 10px; /* 调整图标之间的水平间距 */
+        }
 
 /* Media query for larger screens */
 @media only screen and (min-width: 600px) {

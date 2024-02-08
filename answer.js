@@ -49,16 +49,55 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 50); // 调整淡入间隔（毫秒）
 
-        startButton.addEventListener('click', function() {
-            // 清空总分数
-            totalScore = 0;
+         startButton.addEventListener('click', function() {
+        // 清空总分数
+        totalScore = 0;
 
-            // 重定向到 index.html
-            window.location.href = 'index.html';
-        });
-    }
+        // 将总分数存储到本地存储中
+        localStorage.setItem('totalScore', totalScore);
+
+        // 重定向到 index.html
+        window.location.href = 'index.html';
+    });
+}
 
     // 在类型动画完成后调用淡入表单和按钮
     setTimeout(typeWriter, 1000); // 延迟显示文本动画
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const completionButton = document.getElementById('completionButton');
+
+    // 监听填写完毕按钮的点击事件
+    completionButton.addEventListener('click', function() {
+        // 验证姓名和电子邮件是否都填写了
+        if (nameInput.value !== '' && emailInput.value !== '') {
+            // 发送 POST 请求到后端 Flask 服务
+            fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameInput.value,
+                    email: emailInput.value
+                })
+            }).then(response => {
+                if (response.ok) {
+                    alert('填写完毕！电子邮件已发送到 summerwu0624@gmail.com');
+                } else {
+                    alert('发生错误，请稍后再试！');
+                }
+            }).catch(error => {
+                console.error('发生错误:', error);
+                alert('发生错误，请稍后再试！');
+            });
+        } else {
+            alert('请填写姓名和邮箱！');
+        }
+    });
+});
+
 
