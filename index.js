@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const paragraphs = [
         "你現在正在翻閱的是...",
         "小T的美妝日記",
-        "阿你問小T是素隨?",
+        "阿你問小T素隨?",
         "Ahaha~就是本小姐我拉",
         "來一起看看我2023年的日記",
         "並幫我做決定吧!",
