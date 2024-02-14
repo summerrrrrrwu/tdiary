@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const formGroups = document.querySelectorAll('.form-group');
     const startButton = document.getElementById('startButton');
     const paragraphs = [
-        "謝謝你陪我一起看完我的2023回顧",
+        "你做為小T，青春無敵的18歲女高中生，度過了最熱烈的一年",
         "很精采吧!",
         "所以你是哪一類型的少年少女呢?",
         "可以截圖分享給你的好朋友一起玩",
